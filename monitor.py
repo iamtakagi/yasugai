@@ -17,6 +17,7 @@ from mercari import Rakuma
 # Logger
 logger = logging.getLogger(__name__)
 
+monitor_interval_seconds = 30
 
 def get_script_arguments():
     """引数を解析し、メインプロセスに渡します
@@ -381,17 +382,14 @@ class MonitorClient:
         # クリーンアップ
         self.scrape_outstanding_items()
 
-        # 監視秒数
-        time_between_two_requests = 30
-
         # ログを流す
-        logger.info(f'最初のページのみを {time_between_two_requests} 秒毎に監視し、通知します。'
+        logger.info(f'最初のページのみを {monitor_interval_seconds} 秒毎に監視し、通知します。'
                     f'新商品が見つかったときも通知します。')
         logger.info('監視を開始しています...')
 
         # スレッドループ
         while True:
-            sleep(time_between_two_requests)
+            sleep(monitor_interval_seconds)
             try:
                 # 新商品検索
                 self.check_for_new_items()
@@ -425,6 +423,14 @@ def main():
 
     # ログ関連の初期化
     init_logging()
+
+    global monitor_interval_seconds
+
+    # 設定読み込み
+    settings_filename = "config/settings.json"
+    if os.path.isfile(settings_filename):
+        with open(settings_filename, 'r') as r:
+            monitor_interval_seconds = json.load(r)['monitor_interval_seconds']
 
     # コマンドライン引数の取得
     args = get_script_arguments()

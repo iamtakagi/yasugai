@@ -20,6 +20,9 @@
 - 起動: `docker-compose run app python monitor.py --keywords "RTX3070,RTX3080" --min_prices "0,10" --max_prices "50000,100000"`
   - `-d` を付けることでデタッチモードで起動することができます。
 
+#### 監視間隔秒数
+[config/settings.json](./config/settings.json) に記載されている `monitor_interval_seconds` の値です。
+
 ## ログファイル
 `monitor.log` にログデータが保存される仕様です。
 
