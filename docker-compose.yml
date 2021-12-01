@@ -2,6 +2,8 @@ version: "3.8"
 services:
   app:
     build: .
+    environment:
+      TZ: Asia/Tokyo
     volumes:
        - "./config:/app/config"
        - "./monitor.log:/app/monitor.log"
