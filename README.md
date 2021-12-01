@@ -9,6 +9,7 @@
 - `Alertzy`
 
 ## セットアップ
+まずはじめに、通知に使用したいサービスを選定し、[/config](./config) 内に置いてあるテンプレートファイル (.example.json) を適宣書き換えてください。
 
 #### ① おまかせ環境
 [requirements.txt](./requirements.txt) に記載されている依存関係をインストールしてください。
