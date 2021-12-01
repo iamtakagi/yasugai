@@ -7,3 +7,5 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt \
 COPY monitor.py /config/ /app/
 
 WORKDIR /app
+
+ENTRYPOINT [ "python" ]
