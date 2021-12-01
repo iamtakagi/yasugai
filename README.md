@@ -25,10 +25,10 @@
   - `-d` を付けることでデタッチモードで起動することができます。
 
 #### 監視間隔秒数
-[config/settings.json](./config/settings.json) にて設定可能な `monitor_interval_seconds` の値です。
+[./config/settings.json](./config/settings.json) にて設定可能な `monitor_interval_seconds` の値です。
 
 ## ログファイル
-`monitor.log` にログデータが保存される仕様です。
+`monitor.log` にログデータが保存されます。
 
 ## Licence
 MIT.
