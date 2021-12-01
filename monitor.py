@@ -59,8 +59,6 @@ class Alertzy:
 
     def __init__(self):
         """初期化
-        Args:
-            logger ([type]): [description]
         """
         self.use_module = True
         self.lock = threading.Lock()
@@ -73,7 +71,7 @@ class Alertzy:
             logger.warning('[Alertzy] 通知は無効です。')
 
     def send(self, message, title):
-        """Alertzy 送信
+        """送信
         Args:
             message ([type]): [description]
             title ([type]): [description]
@@ -100,8 +98,6 @@ class Gmail:
 
     def __init__(self):
         """初期化
-        Args:
-            logger (Logger): [description]
         """
         self.use_module = True
         self.lock = threading.Lock()
@@ -121,7 +117,7 @@ class Gmail:
             logger.warning('[Gmail] 通知は無効です。')
 
     def send(self, email_subject, email_content, attachment=None):
-        """Gmailから送信
+        """送信
         Args:
             email_subject ([type]): [description]
             email_content ([type]): [description]
@@ -156,8 +152,6 @@ class Discord:
 
     def __init__(self):
         """初期化
-        Args:
-            logger ([type]): [description]
         """
         self.use_module = True
         self.lock = threading.Lock()
@@ -170,7 +164,7 @@ class Discord:
             logger.warning('[Discord] 通知は無効です。')
 
     def send(self, title, text):
-        """Discordに送信
+        """送信
         Args:
             title ([type]): [description]
             text ([type]): [description]
@@ -196,8 +190,6 @@ class Line:
 
     def __init__(self):
         """初期化
-        Args:
-            logger ([type]): [description]
         """
         self.use_module = True
         self.lock = threading.Lock()
@@ -210,8 +202,7 @@ class Line:
             logger.warning('[LINE] 通知は無効です。')
 
     def send(self, text):
-        """[summary]
-
+        """送信
         Args:
             message ([type]): [description]
 
@@ -233,8 +224,6 @@ class Twitter:
 
     def __init__(self):
         """初期化
-        Args:
-            logger ([type]): [description]
         """
         self.use_module = True
         self.lock = threading.Lock()
@@ -418,7 +407,7 @@ def init_logging():
     format_str = '%(asctime)s - %(levelname)s - %(message)s'
     formatter = logging.Formatter(format_str)
     log_filename = 'monitor.log'
-    print(f'ログ保存ファイル: [{log_filename}]')
+    print(f'ログ保存先: [{log_filename}]')
 
     logging.basicConfig(
         format=format_str,
