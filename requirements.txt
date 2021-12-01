@@ -1,0 +1,5 @@
+requests
+beautifulsoup4
+requests_oauthlib
+mailthon
+mercari_python

@@ -1,0 +1,9 @@
+__pycache__/
+
+alertzy.json
+discord.json
+gmail.json
+line.json
+twitter.json
+
+monitor.log
